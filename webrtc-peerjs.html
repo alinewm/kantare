@@ -4,13 +4,12 @@
 
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-  {{> loginButtons}}
-  {{#if currentUser}}
-    {{> choices}}
-    {{> hello}}
-  {{/if}}
+
 </body>
+
+<template name="login">
+  {{> loginButtons}}
+</template>
 
 <template name="choices">
   <button id="karaoke"> Karaoke</button>
@@ -19,6 +18,7 @@
 </template>
 
 <template name="hello">
+{{#if currentUser}}
     <h2>Video Chat</h2>
     <div id="video-container">
       <!-- note the 'autoplay' -->
@@ -37,5 +37,6 @@
       {{/each}}
       <p><a href="#" id="endCall">End Call</a></p>
     </div>
+{{/if}}
 </template>
 

@@ -1,6 +1,51 @@
 Rooms = new Mongo.Collection("rooms");
 
+Router.route('/', function () {
+  this.render('login');
+});
+
+Router.route('/choices', function () {
+  this.render('choices');
+});
+
+Router.route('/chatRoom', function () {
+  this.render('hello');
+});
+
 if (Meteor.isClient) {
+
+  Template.choices.events({
+    // var user = currentUser;
+    "click #karaoke": function () {
+      Router.go('/chatRoom');
+      if (Rooms.find({user2: null, category: "karaoke"})){
+        targetRoom = Rooms.find({user2: null, category: "karaoke"});
+        targetRoom.update({user2: user}, function() {
+          console.log(targetRoom.id)
+        });
+      } else {
+      db.rooms.insert({ user1: user, user2: null, category: "karaoke", user1likes: 0, user2likes: 0 });
+      }
+    },
+    "click #rapBattle": function () {
+      Router.go('/chatRoom');
+      if (Rooms.find({user2: null, category: "rapBattle"})) {
+        targetRoom = Rooms.find({user2: null, category: "rapBattle"});
+        targetRoom.update({user2: user});
+      } else {
+      db.rooms.insert({ user1: user, user2: null, category: "rapBattle", user1likes: 0, user2likes: 0  });
+      }
+    },
+    "click #debate": function () {
+      Router.go('/chatRoom');
+      if (Rooms.find({user2: null, category: "debate"})) {
+        targetRoom = Rooms.find({user2: null, category: "debate", user1likes: 0, user2likes: 0 });
+        targetRoom.update({user2: user});
+      } else {
+      db.rooms.insert({ user1: user, user2: null, category: "debate", user1likes: 0, user2likes: 0  });
+      }
+    }
+  });
 
   Template.hello.events({
     "click #makeCall": function () {
