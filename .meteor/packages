@@ -6,8 +6,10 @@
 
 meteor-platform
 insecure
-accounts-ui
 accounts-password
 tmeasday:presence
 artwells:accounts-guest
 iron:router
+materialize:materialize
+jquery
+accounts-ui-unstyled
