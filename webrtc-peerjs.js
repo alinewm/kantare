@@ -1,4 +1,7 @@
+Rooms = new Mongo.Collection("rooms");
+
 if (Meteor.isClient) {
+
   Template.hello.events({
     "click #makeCall": function () {
       var user = this;

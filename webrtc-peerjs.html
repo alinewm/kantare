@@ -16,7 +16,9 @@
     <div id="video-container">
       <!-- note the 'autoplay' -->
       Your friend: <video id="theirVideo" class="theirVideo" autoplay></video>
+      <button id="likeFriend">Like {{counterFriend}}</button>
       <video id="myVideo" muted="true" class="myVideo" autoplay></video>: You
+      <button id="likeYou">Like {{counterYou}}</button>
     </div>
 
     <h2>Controls</h2>
@@ -29,3 +31,4 @@
       <p><a href="#" id="endCall">End Call</a></p>
     </div>
 </template>
+
