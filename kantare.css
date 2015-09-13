@@ -207,3 +207,7 @@ tbody tr:hover {
 .unauthenticated {
     display: none;
 }
+
+#likeYou, #likeFriend {
+    background-color: black;
+}
