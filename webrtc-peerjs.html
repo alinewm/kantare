@@ -7,9 +7,16 @@
   <h1>Welcome to Meteor!</h1>
   {{> loginButtons}}
   {{#if currentUser}}
+    {{> choices}}
     {{> hello}}
   {{/if}}
 </body>
+
+<template name="choices">
+  <button id="karaoke"> Karaoke</button>
+  <button id="rapBattle"> Rap Battle</button>
+  <button id="debate"> Debate</button>
+</template>
 
 <template name="hello">
     <h2>Video Chat</h2>
