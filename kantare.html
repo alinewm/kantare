@@ -4,7 +4,7 @@
 </head>
 
 <body>
-{{home}}
+    {{home}}
 </body>
 
 <template name="home">
@@ -61,9 +61,10 @@
                     <a class="button" id="debate">debate</a>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a nisi diam. Aenean dapibus varius aliquam. Cras pharetra et felis non vulputate. Pellentesque faucibus, nibh at consequat placerat, ipsum turpis dapibus dolor, molestie bibendum est elit eu turpis. Aliquam et accumsan velit. Sed nec nulla at arcu lobortis condimentum.</p>
 
-                </li></ul>
-{{else}} {{>loginButtons}} {{/if}}
-</div>
+                </li>
+            </ul>
+            {{/if}} {{>loginButtons}}
+        </div>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -95,24 +96,25 @@
 </template>
 
 <template name="chatRoom">
-{{#if currentUser}}
+    {{#if currentUser}}
     <h2>Video Chat</h2>
     <div id="video-container">
-      <!-- note the 'autoplay' -->
-      Your friend: <video id="theirVideo" class="theirVideo" autoplay></video>
-      <button id="likeFriend">Like {{counterFriend}}</button>
-      <video id="myVideo" muted="true" class="myVideo" autoplay></video>: You
-      <button id="likeYou">Like {{counterYou}}</button>
+        <!-- note the 'autoplay' -->
+        Your friend:
+        <video id="theirVideo" class="theirVideo" autoplay></video>
+        <button id="likeFriend">Like {{counterFriend}}</button>
+        <video id="myVideo" muted="true" class="myVideo" autoplay></video>: You
+        <button id="likeYou">Like {{counterYou}}</button>
     </div>
 
     <h2>Controls</h2>
     <div>
-      <p>Your id: <span id="myPeerId">...</span></p>
-      <p>Make a call</p><br>
-      {{#each users}}
+        <p>Your id: <span id="myPeerId">...</span></p>
+        <p>Make a call</p>
+        <br> {{#each users}}
         <p><a href="#" id="makeCall">Call {{#each emails}}{{address}}{{/each}}</a></p>
-      {{/each}}
-      <p><a href="#" id="endCall">End Call</a></p>
+        {{/each}}
+        <p><a href="#" id="endCall">End Call</a></p>
     </div>
-{{/if}}
+    {{/if}}
 </template>
