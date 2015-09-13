@@ -1,0 +1,91 @@
+<head>
+    <title>Kantare - Rap. Sing. Debate. Connect.</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header>
+        <h1>kantare</h1>
+        <h2>Rap. Sing. Debate. Connect.</h2>
+        <div><a class="button modal-trigger" href="#join">Find a room</a>
+        </div>
+        <div class="spectate-chooser">
+            <h3>Watch someone's story about...</h3>
+            <ul class="rooms">
+                <li>
+                    <a class="page-scroll" href="#asjdfosadnfosadjfn">
+                        <div>
+                            <h4>karaoke</h4>
+                            <img src="karaoke.jpg">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#asjdfosadnfosadjfn">
+                        <div>
+                            <h4>rap battle</h4>
+                            <img src="rapbattle.jpg">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#asjdfosadnfosadjfn">
+                        <div>
+                            <h4>debate</h4>
+                            <img src="debate.jpg">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="join" class="modal grey darken-3">
+        <div class="modal-content">
+            {{#if currentUser}}
+            <h4>Select a room type to join</h4>
+            <ul class="join-rooms">
+                <li>
+                    <a class="button" href="">karaoke</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a nisi diam. Aenean dapibus varius aliquam. Cras pharetra et felis non vulputate. Pellentesque faucibus, nibh at consequat placerat, ipsum turpis dapibus dolor, molestie bibendum est elit eu turpis. Aliquam et accumsan velit. Sed nec nulla at arcu lobortis condimentum.</p>
+                </li>
+                <li>
+                    <a class="button" href="">rap battle</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a nisi diam. Aenean dapibus varius aliquam. Cras pharetra et felis non vulputate. Pellentesque faucibus, nibh at consequat placerat, ipsum turpis dapibus dolor, molestie bibendum est elit eu turpis. Aliquam et accumsan velit. Sed nec nulla at arcu lobortis condimentum.</p>
+                </li>
+                <li>
+                    <a class="button" href="">debate</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a nisi diam. Aenean dapibus varius aliquam. Cras pharetra et felis non vulputate. Pellentesque faucibus, nibh at consequat placerat, ipsum turpis dapibus dolor, molestie bibendum est elit eu turpis. Aliquam et accumsan velit. Sed nec nulla at arcu lobortis condimentum.</p>
+
+                </li></ul>
+{{else}} {{>loginButtons}} {{/if}}
+</div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal({
+                dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                opacity: .5, // Opacity of modal background
+                in_duration: 300, // Transition in duration
+                out_duration: 200, // Transition out duration
+            });
+        });
+
+        // jQuery for page scrolling feature - requires jQuery Easing plugin
+        $(function () {
+            $('tbody tr').bind('click', function (event) {
+                var target = "#guest?"
+                target += $(this).parent().children().index($(this));
+                location.href = target;
+                $('#guest').openModal();
+            });
+
+            $('a[href$="#join"]').bind('click', function (event) {
+                location.href = "#join?action=join";
+            });
+        });
+    </script>
+</body>
