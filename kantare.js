@@ -1,11 +1,11 @@
-// Rooms = new Mongo.Collection("rooms");
+Rooms = new Mongo.Collection("rooms");
 
 Router.route('/', function () {
   this.render('home');
 });
 
-Router.route('/chatRoom', function () {
-  this.render('chatRoom');
+Router.route('/hello', function () {
+  this.render('hello');
 });
 
 if (Meteor.isClient) {
@@ -13,7 +13,7 @@ if (Meteor.isClient) {
   Template.home.events({
     // var user = currentUser;
     "click #karaoke": function () {
-      Router.go('/chatRoom');
+      Router.go('/hello');
       // if (Rooms.find({user2: null, category: "karaoke"})){
       //   targetRoom = Rooms.find({user2: null, category: "karaoke"});
       //   targetRoom.update({user2: user}, function() {
@@ -24,7 +24,7 @@ if (Meteor.isClient) {
       // }
     },
     "click #rapBattle": function () {
-      Router.go('/chatRoom');
+      Router.go('/hello');
       // if (Rooms.find({user2: null, category: "rapBattle"})) {
       //   targetRoom = Rooms.find({user2: null, category: "rapBattle"});
       //   targetRoom.update({user2: user});
@@ -33,7 +33,7 @@ if (Meteor.isClient) {
       // }
     },
     "click #debate": function () {
-      Router.go('/chatRoom');
+      Router.go('/hello');
     //   if (Rooms.find({user2: null, category: "debate"})) {
     //     targetRoom = Rooms.find({user2: null, category: "debate", user1likes: 0, user2likes: 0 });
     //     targetRoom.update({user2: user});
