@@ -90,6 +90,7 @@ h3 {
 ul.rooms {
     list-style-type: none;
     text-align: center;
+    white-space: nowrap;
 }
 
 ul.rooms li {
