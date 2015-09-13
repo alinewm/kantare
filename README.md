@@ -1,3 +1,7 @@
+Mhacks 6 project
+Aline, Karthik, Anthony
+
+
 <b>Inspiration</b><br>
 Omegle and chatroulette have been sources of some amazing moments, but those moments are very few in comparison to the standard experience. We wanted to make an app that enabled users to experience only those moments, and allow for more than just two parties to directly witness them.
 
@@ -16,3 +20,6 @@ DO NOT DO RAILS FOR REAL TIME APPS.
 <b>What's next for Kantare</b><br>
 Provide direct modules for each of the room types, such as background music or policy debate timings. Implement a further means of interaction between audience and presenter with text chat. Allow for private rooms. Build a matchmaking and elo rating system for competitive topics such as debate.
 
+
+Check us out on Devpost where we compete at Mhacks6 for prizes!
+http://devpost.com/software/kantare
