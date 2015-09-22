@@ -4,13 +4,13 @@ Router.route('/', function () {
   this.render('home');
 });
 
-Router.route('/hello', function () {
-  this.render('hello');
+Router.route('/chatRoom', function () {
+  this.render('chatRoom');
 });
 
 if (Meteor.isClient) {
 
-  Template.home.events({
+  Template.chatRoom.events({
     // var user = currentUser;
     "click #karaoke": function () {
       Router.go('/hello');
@@ -44,7 +44,7 @@ if (Meteor.isClient) {
   }
   });
 
-  Template.hello.events({
+  Template.chatRoom.events({
     "click #makeCall": function () {
       var user = this;
       var outgoingCall = peer.call(user.profile.peerId, window.localStream);
@@ -60,7 +60,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.hello.helpers({
+  Template.chatRoom.helpers({
     users: function () {
       // exclude the currentUser
       var userIds = Presences.find().map(function(presence) {return presence.userId;});
@@ -68,7 +68,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.hello.onCreated(function () {
+  Template.chatRoom.onCreated(function () {
     Meteor.subscribe("presences");
     Meteor.subscribe("users");
 
